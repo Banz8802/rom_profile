@@ -1,111 +1,79 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { Award, Camera, Film, Sparkles, CheckCircle2 } from 'lucide-react';
+import React from 'react';
 
 export default function About() {
-  const [portraitSrc, setPortraitSrc] = useState('/images/about-portrait.jpg');
-
-  const highlights = [
-    'Over 9+ years of professional video production & design experience',
-    'Directed 120+ commercial, broadcast & brand campaigns',
-    'Specialized in dark cinematic aesthetics & kinetic typography',
-    'End-to-end creative direction: concept to final master delivery',
+  const toolsAndSkills = [
+    'Photoshop',
+    'After Effects',
+    'Figma',
+    'Corel Draw',
+    'Illustrator',
+    'Video Editing',
+    'Branding',
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-[#08080c] relative overflow-hidden">
-      {/* Background accents */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#e61e7a]/5 rounded-full blur-[140px] pointer-events-none" />
+    <section
+      id="about"
+      className="py-20 md:py-32 bg-[#08040a] relative overflow-hidden border-b border-zinc-900/60"
+    >
+      {/* Background Plum Glow Accents */}
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#e61e7a]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-[#2d091e]/20 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Visual Portrait Card */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900/40 group shadow-2xl">
-              <div className="aspect-[4/5] relative w-full">
-                <Image
-                  src={portraitSrc}
-                  alt="Rom Christian Laberinto Creative Studio"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  onError={() => {
-                    if (portraitSrc !== '/images/about-portrait.svg') {
-                      setPortraitSrc('/images/about-portrait.svg');
-                    }
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08080c] via-transparent to-transparent opacity-80" />
-              </div>
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-12 md:mb-16">
+          <span className="text-[#ff4d29] text-xs uppercase font-bold tracking-widest block mb-4">
+            ABOUT ME
+          </span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.08]">
+            A designer who <br />
+            loves visual stories.
+          </h2>
+        </div>
 
-              {/* Floating Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-zinc-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#e61e7a] to-[#9333ea] flex items-center justify-center text-white">
-                    <Sparkles className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white">Creative Director</h4>
-                    <p className="text-xs text-zinc-400">Based in Manila & Available Worldwide</p>
-                  </div>
-                </div>
-                <span className="px-3 py-1 rounded-full bg-[#ff4d29]/20 text-[#ff4d29] text-xs font-semibold border border-[#ff4d29]/30">
-                  Pro
+        {/* 2 Column Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
+          {/* Left Card: Bio & Tools */}
+          <div className="bg-[#180914]/80 backdrop-blur-md border border-[#ff4d29]/20 hover:border-[#ff4d29]/40 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-xl">
+            <div className="space-y-4 text-zinc-300 text-base sm:text-lg leading-relaxed">
+              <p>
+                I’m Rom Christian Laberinto, a graphic artist, video editor and creative designer. I enjoy turning simple ideas into work that feels clear, modern and memorable.
+              </p>
+              <p>
+                My work covers branding, social media graphics, video content, print materials and digital design.
+              </p>
+            </div>
+
+            {/* Skill / Tool Pills */}
+            <div className="flex flex-wrap gap-2.5 mt-8 pt-6 border-t border-zinc-800/80">
+              {toolsAndSkills.map((tool) => (
+                <span
+                  key={tool}
+                  className="px-4 py-2 rounded-full bg-zinc-950/80 text-zinc-200 text-xs sm:text-sm font-medium border border-zinc-800 hover:border-[#ff4d29]/50 hover:text-white transition-colors"
+                >
+                  {tool}
                 </span>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Right Column: Editorial Bio */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ff4d29]/10 border border-[#ff4d29]/20 text-[#ff4d29] text-xs font-bold tracking-wider uppercase mb-6">
-              01 / ABOUT ME
-            </div>
+          {/* Right Card: Philosophy & Quote */}
+          <div className="bg-[#180914]/80 backdrop-blur-md border border-[#ff4d29]/20 hover:border-[#ff4d29]/40 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-xl">
+            <div className="space-y-6">
+              {/* Large Quote */}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-[1.2]">
+                “Good design doesn’t just{' '}
+                <span className="text-[#ff4d29] block sm:inline">look good.</span>{' '}
+                It communicates.”
+              </h3>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
-              Crafting visual narratives that help brands{' '}
-              <span className="text-[#ff4d29]">stand out & connect.</span>
-            </h2>
-
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed mt-6">
-              Hi, I’m <strong className="text-white font-semibold">Rom Christian LABERINTO</strong>. As a multidisciplinary visual designer and video creator, I bridge the gap between creative vision and strategic audience engagement.
-            </p>
-
-            <p className="text-zinc-400 text-base leading-relaxed mt-4">
-              My approach combines cinematic lighting, high-contrast typography, and purposeful motion design to build brand identities and commercials that command attention. Whether producing a high-energy brand film or designing a comprehensive visual design system, I focus on emotion, clarity, and precision.
-            </p>
-
-            {/* Highlights List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-8 pt-6 border-t border-zinc-800/80">
-              {highlights.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#ff4d29] shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm text-zinc-300 font-medium">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* Quick Skills Pills */}
-            <div className="flex flex-wrap gap-2 mt-8">
-              {[
-                'Video Production',
-                'Motion Design',
-                'Brand Identity',
-                'Color Grading',
-                'Kinetic Typography',
-                'Creative Direction',
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3.5 py-1.5 rounded-full bg-zinc-900 text-zinc-300 text-xs font-medium border border-zinc-800"
-                >
-                  {tag}
-                </span>
-              ))}
+              {/* Goal Paragraph */}
+              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                My goal is simple: create work that looks professional, tells the story clearly and helps the client achieve the purpose behind the design.
+              </p>
             </div>
           </div>
         </div>

@@ -1,9 +1,9 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import WhatIDo from '@/components/WhatIDo';
+import SelectedWork from '@/components/SelectedWork';
 import About from '@/components/About';
-import Services from '@/components/Services';
-import Portfolio from '@/components/Portfolio';
-import Contact from '@/components/Contact';
+import HireMe from '@/components/HireMe';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -12,10 +12,10 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <WhatIDo />
+        <SelectedWork />
         <About />
-        <Services />
-        <Portfolio />
-        <Contact />
+        <HireMe />
       </main>
       <Footer />
     </div>
