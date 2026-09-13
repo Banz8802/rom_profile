@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141c24" />
+      <stop offset="100%" stop-color="#070b10" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#p4)" />
+  <rect x="100" y="100" width="600" height="380" rx="12" fill="#0b1016" stroke="#00d2ff" stroke-width="2" opacity="0.6" />
+  <text x="400" y="540" fill="#ffffff" opacity="0.4" font-family="sans-serif" font-size="20" text-anchor="middle">VANGUARD WEB DESIGN PLACEHOLDER</text>
+</svg>

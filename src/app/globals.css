@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050508;
+  --foreground: #f4f4f6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #050508;
+  color: #f4f4f6;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Subtle selection color */
+::selection {
+  background: #e61e7a;
+  color: #ffffff;
+}
+
+/* Custom utilities */
+.gradient-cta {
+  background: linear-gradient(135deg, #e61e7a 0%, #c026d3 50%, #9333ea 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gradient-cta:hover {
+  background: linear-gradient(135deg, #f42b88 0%, #d946ef 50%, #a855f7 100%);
+  box-shadow: 0 0 25px rgba(230, 30, 122, 0.45);
+  transform: translateY(-1px);
+}
+
+.accent-text-red {
+  color: #ff4d29;
+}
+
+.card-dark-glass {
+  background: rgba(19, 17, 24, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card-dark-glass:hover {
+  border-color: rgba(230, 30, 122, 0.35);
+  box-shadow: 0 8px 30px rgba(230, 30, 122, 0.12);
+}

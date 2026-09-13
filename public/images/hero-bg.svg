@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <radialGradient id="neonGlow" cx="70%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#e61e7a" stop-opacity="0.45" />
+      <stop offset="45%" stop-color="#9333ea" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#050508" stop-opacity="0.95" />
+    </radialGradient>
+    <radialGradient id="redGlow" cx="20%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#ff4d29" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#050508" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="overlayFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#050508" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#050508" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#050508" stop-opacity="0.4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Dark Background Base -->
+  <rect width="1920" height="1080" fill="#050508" />
+
+  <!-- Studio Neon Glow Effect (right side rim light) -->
+  <rect width="1920" height="1080" fill="url(#neonGlow)" />
+  <rect width="1920" height="1080" fill="url(#redGlow)" />
+
+  <!-- Studio Grid & Bokeh Accents -->
+  <circle cx="1400" cy="400" r="350" fill="#c026d3" opacity="0.15" filter="blur(60px)" />
+  <circle cx="1250" cy="550" r="220" fill="#ff4d29" opacity="0.12" filter="blur(40px)" />
+
+  <!-- Abstract Profile Silhouette Representation -->
+  <g opacity="0.35" transform="translate(1050, 150)">
+    <ellipse cx="250" cy="220" rx="140" ry="170" fill="#131118" stroke="#e61e7a" stroke-width="3" />
+    <path d="M120 400 Q250 320 380 400 L440 680 L60 680 Z" fill="#0b090f" stroke="#ff4d29" stroke-width="2" />
+  </g>
+
+  <!-- Left Dark Gradient Mask for Crisp Typography -->
+  <rect width="1920" height="1080" fill="url(#overlayFade)" />
+
+  <!-- Placeholder Label -->
+  <text x="1860" y="1040" fill="#ffffff" opacity="0.25" font-family="sans-serif" font-size="18" text-anchor="end">HERO BACKGROUND PLACEHOLDER (Replace file at public/images/hero-bg.jpg)</text>
+</svg>
