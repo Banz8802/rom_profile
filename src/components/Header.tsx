@@ -33,12 +33,12 @@ export default function Header() {
           className="flex items-center gap-3 group transition-transform duration-200 hover:scale-105"
           aria-label="Rom Christian Laberinto - Home"
         >
-          <div className="w-10 h-10 md:w-11 md:h-11 relative flex items-center justify-center bg-zinc-950 rounded-lg border border-white/10 group-hover:border-pink-500/50 transition-colors p-1">
+          <div className="w-10 h-10 md:w-11 md:h-11 relative flex items-center justify-center">
             <Image
               src="/images/rom-logo.png"
               alt="Rom Christian LABERINTO Logo"
-              width={40}
-              height={40}
+              width={44}
+              height={44}
               className="w-full h-full object-contain"
               priority
             />
