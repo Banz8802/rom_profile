@@ -173,10 +173,10 @@ export const PORTFOLIO_PROJECTS: ProjectItem[] = [
 ];
 
 export const NAV_LINKS = [
-  { name: 'What I Do', href: '#what-i-do' },
-  { name: 'About', href: '#about' },
-  { name: 'Work', href: '#work' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'About', href: '/#about' },
+  { name: 'What I Do', href: '/#what-i-do' },
+  { name: 'Work', href: '/#work' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export const CONTACT_INFO = {

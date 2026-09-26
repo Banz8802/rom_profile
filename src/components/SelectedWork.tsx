@@ -1,15 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import FadeUp from './FadeUp';
 
 export default function SelectedWork() {
-  const [img1, setImg1] = useState('/images/portfolio/project-1.jpg');
-  const [img2, setImg2] = useState('/images/portfolio/project-3.jpg');
-  const [img3, setImg3] = useState('/images/portfolio/project-4.jpg');
-
   return (
     <section
       id="work"
@@ -37,35 +34,36 @@ export default function SelectedWork() {
           {/* Left Column: Tall Card (Brand & Campaign Design) */}
           <div className="lg:col-span-6 flex">
             <FadeUp delay={0.15} className="w-full flex">
-              <div className="w-full bg-[#180914]/80 backdrop-blur-md border border-[#ff4d29]/20 hover:border-[#ff4d29]/50 rounded-2xl md:rounded-3xl overflow-hidden relative group flex flex-col justify-end min-h-[420px] sm:min-h-[500px] lg:min-h-[600px] transition-all duration-500 hover:-translate-y-1.5 shadow-2xl hover:shadow-[#ff4d29]/15">
-                {/* Image / Dark Background Atmosphere */}
-                <div className="absolute inset-0 z-0 bg-zinc-950">
-                  <Image
-                    src={img1}
-                    alt="Brand & Campaign Design"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
-                    onError={() => setImg1('/images/portfolio/project-1.svg')}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#12050f] via-[#180914]/80 to-transparent" />
-                </div>
+              <Link href="/brand-campaign-design" className="w-full flex">
+                <div className="w-full bg-[#180914]/80 backdrop-blur-md border border-[#ff4d29]/25 hover:border-[#ff4d29]/60 rounded-2xl md:rounded-3xl overflow-hidden relative group flex flex-col justify-end min-h-[420px] sm:min-h-[500px] lg:min-h-[600px] transition-all duration-500 hover:-translate-y-1.5 shadow-2xl hover:shadow-[#ff4d29]/15 cursor-pointer">
+                  {/* Background Image */}
+                  <div className="absolute inset-0 z-0 bg-zinc-950">
+                    <Image
+                      src="/images/branding-camp.png"
+                      alt="Brand & Campaign Design"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0d030c] via-[#0d030c]/40 to-transparent" />
+                  </div>
 
-                {/* Top Hover Icon */}
-                <div className="absolute top-6 right-6 z-10 w-11 h-11 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </div>
+                  {/* Top Hover Icon */}
+                  <div className="absolute top-6 right-6 z-10 w-11 h-11 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </div>
 
-                {/* Card Content (Bottom) */}
-                <div className="relative z-10 p-6 sm:p-8 md:p-10">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-2.5 group-hover:text-rose-300 transition-colors">
-                    Brand & Campaign Design
-                  </h3>
-                  <p className="text-zinc-300 text-xs sm:text-sm font-medium tracking-wide">
-                    Identity systems • Social media • Marketing campaigns
-                  </p>
+                  {/* Card Content (Bottom) */}
+                  <div className="relative z-10 p-6 sm:p-8 md:p-10">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-2.5 group-hover:text-rose-200 transition-colors drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                      Brand & Campaign Design
+                    </h3>
+                    <p className="text-zinc-200 text-xs sm:text-sm font-medium tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                      Identity systems • Social media • Marketing campaigns
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </FadeUp>
           </div>
 
@@ -73,17 +71,16 @@ export default function SelectedWork() {
           <div className="lg:col-span-6 flex flex-col gap-6">
             {/* Top Right Card (Video & Motion) */}
             <FadeUp delay={0.3} className="flex-1 flex">
-              <div className="w-full flex-1 bg-[#180914]/80 backdrop-blur-md border border-[#ff4d29]/20 hover:border-[#ff4d29]/50 rounded-2xl md:rounded-3xl overflow-hidden relative group flex flex-col justify-end min-h-[220px] sm:min-h-[260px] lg:min-h-[285px] transition-all duration-500 hover:-translate-y-1.5 shadow-xl hover:shadow-[#ff4d29]/15">
+              <div className="w-full flex-1 bg-[#180914]/80 backdrop-blur-md border border-[#ff4d29]/25 hover:border-[#ff4d29]/60 rounded-2xl md:rounded-3xl overflow-hidden relative group flex flex-col justify-end min-h-[220px] sm:min-h-[260px] lg:min-h-[285px] transition-all duration-500 hover:-translate-y-1.5 shadow-xl hover:shadow-[#ff4d29]/15">
                 <div className="absolute inset-0 z-0 bg-zinc-950">
                   <Image
-                    src={img2}
+                    src="/images/video-motion.png"
                     alt="Video & Motion"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
-                    onError={() => setImg2('/images/portfolio/project-3.svg')}
+                    className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#12050f] via-[#180914]/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d030c] via-[#0d030c]/40 to-transparent" />
                 </div>
 
                 <div className="absolute top-6 right-6 z-10 w-11 h-11 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -91,29 +88,28 @@ export default function SelectedWork() {
                 </div>
 
                 <div className="relative z-10 p-6 sm:p-8">
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 group-hover:text-rose-300 transition-colors">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 group-hover:text-rose-200 transition-colors drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                     Video & Motion
                   </h3>
-                  <p className="text-zinc-300 text-xs sm:text-sm font-medium tracking-wide">
+                  <p className="text-zinc-200 text-xs sm:text-sm font-medium tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
                     Reels • Ads • Short form content
                   </p>
                 </div>
               </div>
             </FadeUp>
 
-            {/* Bottom Right Card (Digital & UI) */}
+            {/* Bottom Right Card (UI Designs & Digital Artworks) */}
             <FadeUp delay={0.45} className="flex-1 flex">
-              <div className="w-full flex-1 bg-[#180914]/80 backdrop-blur-md border border-[#ff4d29]/20 hover:border-[#ff4d29]/50 rounded-2xl md:rounded-3xl overflow-hidden relative group flex flex-col justify-end min-h-[220px] sm:min-h-[260px] lg:min-h-[285px] transition-all duration-500 hover:-translate-y-1.5 shadow-xl hover:shadow-[#ff4d29]/15">
+              <div className="w-full flex-1 bg-[#180914]/80 backdrop-blur-md border border-[#ff4d29]/25 hover:border-[#ff4d29]/60 rounded-2xl md:rounded-3xl overflow-hidden relative group flex flex-col justify-end min-h-[220px] sm:min-h-[260px] lg:min-h-[285px] transition-all duration-500 hover:-translate-y-1.5 shadow-xl hover:shadow-[#ff4d29]/15">
                 <div className="absolute inset-0 z-0 bg-zinc-950">
                   <Image
-                    src={img3}
-                    alt="Digital & UI"
+                    src="/images/ui-designs.png"
+                    alt="UI Designs & Digital Artworks"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
-                    onError={() => setImg3('/images/portfolio/project-4.svg')}
+                    className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#12050f] via-[#180914]/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d030c] via-[#0d030c]/40 to-transparent" />
                 </div>
 
                 <div className="absolute top-6 right-6 z-10 w-11 h-11 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -121,10 +117,10 @@ export default function SelectedWork() {
                 </div>
 
                 <div className="relative z-10 p-6 sm:p-8">
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 group-hover:text-rose-300 transition-colors">
-                    Digital & UI
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 group-hover:text-rose-200 transition-colors drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                    UI Designs & Digital Artworks
                   </h3>
-                  <p className="text-zinc-300 text-xs sm:text-sm font-medium tracking-wide">
+                  <p className="text-zinc-200 text-xs sm:text-sm font-medium tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
                     Interfaces • Game graphics • Visual systems
                   </p>
                 </div>

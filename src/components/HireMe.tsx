@@ -13,7 +13,7 @@ export default function HireMe() {
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[380px] bg-[#e61e7a]/15 rounded-full blur-[170px] pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1440px] w-full mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         <FadeUp delay={0.15}>
           <div className="bg-[#180914]/80 backdrop-blur-md border border-[#e61e7a]/35 rounded-2xl md:rounded-3xl p-8 sm:p-10 md:p-14 shadow-2xl relative overflow-hidden">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">

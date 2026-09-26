@@ -26,10 +26,10 @@ export default function Header() {
           : 'bg-[#050508]/80 backdrop-blur-sm py-4'
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 h-[64px] md:h-[72px] flex items-center justify-between">
+      <div className="max-w-[1440px] w-full mx-auto px-4 sm:px-6 md:px-12 h-[64px] md:h-[72px] flex items-center justify-between">
         {/* Left: Minimal Geometric Logo */}
         <Link
-          href="#"
+          href="/"
           className="flex items-center gap-3 group transition-transform duration-200 hover:scale-105"
           aria-label="Rom Christian Laberinto - Home"
         >
@@ -61,7 +61,7 @@ export default function Header() {
         {/* Right: Desktop CTA Button */}
         <div className="hidden md:block">
           <Link
-            href="#contact"
+            href="/#contact"
             className="gradient-cta inline-flex items-center gap-2.5 px-6 lg:px-7 py-3 lg:py-3.5 rounded-full text-white font-semibold text-sm lg:text-base tracking-wide shadow-lg shadow-pink-500/10 group"
           >
             <span>Let’s Work Together</span>
@@ -81,7 +81,7 @@ export default function Header() {
 
       {/* Mobile Drawer Navigation */}
       <div
-        className={`md:hidden fixed inset-x-0 top-[80px] bg-[#07070c]/98 border-b border-zinc-800/80 backdrop-blur-xl px-6 py-8 transition-all duration-300 ease-in-out flex flex-col gap-6 shadow-2xl ${
+        className={`md:hidden absolute left-0 right-0 top-full bg-[#07070c]/98 border-b border-zinc-800/80 backdrop-blur-xl px-6 py-8 transition-all duration-300 ease-in-out flex flex-col gap-6 shadow-2xl ${
           mobileMenuOpen
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 -translate-y-4 pointer-events-none'
@@ -101,7 +101,7 @@ export default function Header() {
         </div>
 
         <Link
-          href="#contact"
+          href="/#contact"
           onClick={() => setMobileMenuOpen(false)}
           className="gradient-cta flex items-center justify-center gap-2.5 px-6 py-4 rounded-full text-white font-semibold text-base tracking-wide shadow-lg shadow-pink-500/20 mt-2"
         >

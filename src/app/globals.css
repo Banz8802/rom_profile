@@ -73,3 +73,55 @@ body {
   border-color: rgba(230, 30, 122, 0.35);
   box-shadow: 0 8px 30px rgba(230, 30, 122, 0.12);
 }
+
+/* Intro Animations */
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+  }
+  14% {
+    transform: scale(1.08);
+    opacity: 1;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+  }
+  28% {
+    transform: scale(0.98);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  }
+  42% {
+    transform: scale(1.04);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.45));
+  }
+  70% {
+    transform: scale(0.96);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 3.8s infinite ease-in-out;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3.8s infinite ease-in-out;
+}
+

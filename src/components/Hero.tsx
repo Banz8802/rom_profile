@@ -8,7 +8,7 @@ import StatCard from './StatCard';
 import { HERO_STATS } from '@/data/portfolioData';
 
 export default function Hero() {
-  const [bgSrc, setBgSrc] = useState('/images/hero-banner.png');
+  const [bgSrc, setBgSrc] = useState('/images/hero-img.webp');
 
   return (
     <section className="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-[#050508]">
@@ -20,7 +20,7 @@ export default function Hero() {
           fill
           priority
           quality={90}
-          className="object-cover object-center md:object-right opacity-80"
+          className="object-cover object-left opacity-85"
           onError={() => {
             // Fallback to SVG placeholder if JPG doesn't exist yet
             if (bgSrc !== '/images/hero-bg.svg') {
