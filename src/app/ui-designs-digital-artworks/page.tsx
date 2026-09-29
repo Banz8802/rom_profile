@@ -241,51 +241,54 @@ export default function UIDesignsDigitalArtworksPage() {
             </div>
           </FadeUp>
 
-          {/* Container 3: Panda Wars & Animation Sprites with Floating Buddha/Warrior Character */}
+          {/* Container 3: Panda Wars & Animation Sprites */}
           <FadeUp delay={0.35}>
             <div className="bg-[#140812]/80 backdrop-blur-md border border-white/10 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 mb-6 shadow-2xl relative">
-              {/* Floating Top Left Golden Character */}
-              <div className="absolute -top-12 sm:-top-16 md:-top-24 -left-4 sm:-left-8 md:-left-12 w-36 sm:w-52 md:w-64 z-20 pointer-events-none drop-shadow-[0_0_35px_rgba(255,200,50,0.45)]">
-                <Image
-                  src="/images/digital/panda-067 1.png"
-                  alt="Golden Warrior Sprite"
-                  width={505}
-                  height={505}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
+              {/* Top Row: 3 Columns (Golden Warrior Left + Panda Wars Banner Middle + 2 Stacked Screens Right) */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 items-center mb-4 pt-1">
+                {/* Left Column: Golden Warrior */}
+                <div className="lg:col-span-3 flex items-center justify-center relative">
+                  <div className="relative w-full max-w-[200px] sm:max-w-[230px] lg:max-w-[260px] aspect-square flex items-center justify-center drop-shadow-[0_0_35px_rgba(255,200,50,0.45)] -mt-4 lg:-mt-8">
+                    <Image
+                      src="/images/digital/panda-067 1.png"
+                      alt="Golden Warrior Sprite"
+                      fill
+                      sizes="(max-width: 1024px) 230px, 260px"
+                      className="object-contain pointer-events-none"
+                      priority
+                    />
+                  </div>
+                </div>
 
-              {/* Top Row: Panda Wars Banner + 2 Gameplay Screens */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 mb-3 sm:mb-4 pt-4 sm:pt-2">
-                {/* Banner Left */}
-                <div className="lg:col-span-8 rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group">
+                {/* Middle Column: Panda Wars Banner */}
+                <div className="lg:col-span-6 rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group relative aspect-[650/238] flex items-center justify-center">
                   <Image
                     src="/images/digital/digi2-img-1.png"
                     alt="Panda Wars Key Artwork"
-                    width={650}
-                    height={238}
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
                   />
                 </div>
 
-                {/* 2 Stacked Screens Right */}
-                <div className="lg:col-span-4 flex flex-col gap-3">
-                  <div className="rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group flex-1">
+                {/* Right Column: 2 Stacked Screens */}
+                <div className="lg:col-span-3 flex flex-col gap-2.5 sm:gap-3">
+                  <div className="rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group relative aspect-[245/114]">
                     <Image
                       src="/images/digital/digi2-img-2.png"
                       alt="Game Screen 1"
-                      width={245}
-                      height={114}
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                      className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
                     />
                   </div>
-                  <div className="rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group flex-1">
+                  <div className="rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group relative aspect-[245/114]">
                     <Image
                       src="/images/digital/digi2-img-3.png"
                       alt="Game Screen 2"
-                      width={245}
-                      height={114}
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                      className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
                     />
                   </div>
                 </div>
