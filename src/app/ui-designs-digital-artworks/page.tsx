@@ -244,21 +244,22 @@ export default function UIDesignsDigitalArtworksPage() {
           {/* Container 3: Panda Wars & Animation Sprites */}
           <FadeUp delay={0.35}>
             <div className="bg-[#140812]/80 backdrop-blur-md border border-white/10 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 mb-6 shadow-2xl relative">
-              {/* Top Row: 3 Columns (Golden Warrior Left + Panda Wars Banner Middle + 2 Stacked Screens Right) */}
+              {/* Floating Top Left Golden Character (overlapping top-left border) */}
+              <div className="absolute -top-10 sm:-top-14 md:-top-20 -left-4 sm:-left-6 lg:-left-8 w-32 sm:w-44 md:w-56 lg:w-64 xl:w-72 pointer-events-none z-20 drop-shadow-[0_0_40px_rgba(255,200,50,0.5)]">
+                <Image
+                  src="/images/digital/panda-067 1.png"
+                  alt="Golden Warrior Sprite"
+                  width={505}
+                  height={505}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </div>
+
+              {/* Top Row: 3 Columns (Left spacer for floating warrior + Panda Wars Banner Middle + 2 Stacked Screens Right) */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 items-center mb-4 pt-1">
-                {/* Left Column: Golden Warrior */}
-                <div className="lg:col-span-3 flex items-center justify-center relative">
-                  <div className="relative w-full max-w-[200px] sm:max-w-[230px] lg:max-w-[260px] aspect-square flex items-center justify-center drop-shadow-[0_0_35px_rgba(255,200,50,0.45)] -mt-4 lg:-mt-8">
-                    <Image
-                      src="/images/digital/panda-067 1.png"
-                      alt="Golden Warrior Sprite"
-                      fill
-                      sizes="(max-width: 1024px) 230px, 260px"
-                      className="object-contain pointer-events-none"
-                      priority
-                    />
-                  </div>
-                </div>
+                {/* Left Column Spacer (reserves space for floating warrior) */}
+                <div className="hidden lg:block lg:col-span-3 min-h-[100px]" />
 
                 {/* Middle Column: Panda Wars Banner */}
                 <div className="lg:col-span-6 rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group relative aspect-[650/238] flex items-center justify-center">
