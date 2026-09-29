@@ -244,22 +244,21 @@ export default function UIDesignsDigitalArtworksPage() {
           {/* Container 3: Panda Wars & Animation Sprites with Floating Golden Warrior */}
           <FadeUp delay={0.35}>
             <div className="bg-[#140812]/80 backdrop-blur-md border border-white/10 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 mb-6 shadow-2xl relative">
-              {/* Floating Golden Warrior (Full dimension with small top border overlap) */}
-              <div className="absolute -top-5 sm:-top-7 md:-top-9 left-3 sm:left-5 md:left-7 lg:left-8 w-36 sm:w-44 md:w-52 lg:w-60 xl:w-64 pointer-events-none z-20 drop-shadow-[0_0_35px_rgba(255,200,50,0.5)]">
-                <Image
-                  src="/images/digital/panda-067 1.png"
-                  alt="Golden Warrior Sprite"
-                  width={505}
-                  height={505}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
-
-              {/* Top Row: Left area for warrior + Panda Wars Banner Middle + 2 Stacked Screens Right */}
-              <div className="flex flex-col lg:flex-row items-center gap-3 sm:gap-4 mb-4 pt-1">
-                {/* Left Spacer (reserves space for warrior on lg+ screens) */}
-                <div className="hidden lg:block lg:w-[23%] xl:w-[22%] shrink-0" />
+              {/* Top Row: 3 Columns (Large Golden Warrior Left + Panda Wars Banner Center + 2 Stacked Screens Right) */}
+              <div className="flex flex-col lg:flex-row items-center gap-3 sm:gap-5 mb-4 pt-1">
+                {/* Left Column: Golden Warrior filling the left space */}
+                <div className="w-full lg:w-[28%] xl:w-[26%] flex items-center justify-center relative shrink-0">
+                  <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px] aspect-square flex items-center justify-center -mt-8 sm:-mt-10 lg:-mt-14 z-20 pointer-events-none drop-shadow-[0_0_45px_rgba(255,200,50,0.55)]">
+                    <Image
+                      src="/images/digital/panda-067 1.png"
+                      alt="Golden Warrior Sprite"
+                      fill
+                      sizes="(max-width: 1024px) 320px, 360px"
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                </div>
 
                 {/* Middle Column: Panda Wars Banner */}
                 <div className="flex-1 w-full rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group relative aspect-[650/238] flex items-center justify-center">
