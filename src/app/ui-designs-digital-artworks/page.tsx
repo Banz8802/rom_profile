@@ -244,8 +244,8 @@ export default function UIDesignsDigitalArtworksPage() {
           {/* Container 3: Panda Wars & Animation Sprites with Floating Golden Warrior */}
           <FadeUp delay={0.35}>
             <div className="bg-[#140812]/80 backdrop-blur-md border border-white/10 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 mb-6 shadow-2xl relative">
-              {/* Floating Top Left Golden Character overflowing container border */}
-              <div className="absolute -top-12 sm:-top-16 md:-top-24 -left-2 sm:left-2 md:left-4 lg:left-4 w-40 sm:w-52 md:w-64 lg:w-72 xl:w-80 pointer-events-none z-20 drop-shadow-[0_0_45px_rgba(255,200,50,0.55)]">
+              {/* Floating Golden Warrior (Full dimension with small top border overlap) */}
+              <div className="absolute -top-5 sm:-top-7 md:-top-9 left-3 sm:left-5 md:left-7 lg:left-8 w-36 sm:w-44 md:w-52 lg:w-60 xl:w-64 pointer-events-none z-20 drop-shadow-[0_0_35px_rgba(255,200,50,0.5)]">
                 <Image
                   src="/images/digital/panda-067 1.png"
                   alt="Golden Warrior Sprite"
@@ -258,8 +258,8 @@ export default function UIDesignsDigitalArtworksPage() {
 
               {/* Top Row: Left area for warrior + Panda Wars Banner Middle + 2 Stacked Screens Right */}
               <div className="flex flex-col lg:flex-row items-center gap-3 sm:gap-4 mb-4 pt-1">
-                {/* Left Spacer (reserves space for floating warrior on lg+ screens) */}
-                <div className="hidden lg:block lg:w-[24%] xl:w-[23%] shrink-0" />
+                {/* Left Spacer (reserves space for warrior on lg+ screens) */}
+                <div className="hidden lg:block lg:w-[23%] xl:w-[22%] shrink-0" />
 
                 {/* Middle Column: Panda Wars Banner */}
                 <div className="flex-1 w-full rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group relative aspect-[650/238] flex items-center justify-center">
