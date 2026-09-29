@@ -26,19 +26,19 @@ const CLAW_GRID_ITEMS = [
 ];
 
 const DIGITAL_ROW_1 = [
-  { id: 'd1', src: '/images/digital/digi-img-1.png', alt: 'Digital Artwork 1', flex: 'flex-[1.4]' },
-  { id: 'd2', src: '/images/digital/digi-img-2.png', alt: 'Digital Artwork 2', flex: 'flex-1' },
-  { id: 'd3', src: '/images/digital/digi-img-3.png', alt: 'Digital Artwork 3', flex: 'flex-1' },
-  { id: 'd4', src: '/images/digital/digi-img-4.png', alt: 'Digital Artwork 4', flex: 'flex-1' },
-  { id: 'd5', src: '/images/digital/digi-img-5.png', alt: 'Digital Artwork 5', flex: 'flex-[1.1]' },
+  { id: 'd1', src: '/images/digital/digi-img-1.png', alt: 'Digital Artwork 1', flex: 'flex-[1.41]' },
+  { id: 'd2', src: '/images/digital/digi-img-2.png', alt: 'Digital Artwork 2', flex: 'flex-[0.7]' },
+  { id: 'd3', src: '/images/digital/digi-img-3.png', alt: 'Digital Artwork 3', flex: 'flex-[0.7]' },
+  { id: 'd4', src: '/images/digital/digi-img-4.png', alt: 'Digital Artwork 4', flex: 'flex-[0.71]' },
+  { id: 'd5', src: '/images/digital/digi-img-5.png', alt: 'Digital Artwork 5', flex: 'flex-[0.9]' },
 ];
 
 const DIGITAL_ROW_2 = [
-  { id: 'd6', src: '/images/digital/digi-img-6.png', alt: 'Digital Artwork 6', flex: 'flex-1' },
-  { id: 'd7', src: '/images/digital/digi-img-7.png', alt: 'Digital Artwork 7', flex: 'flex-1' },
-  { id: 'd8', src: '/images/digital/digi-img-8.png', alt: 'Digital Artwork 8', flex: 'flex-1' },
-  { id: 'd9', src: '/images/digital/digi-img-9.png', alt: 'Digital Artwork 9', flex: 'flex-[1.8]' },
-  { id: 'd10', src: '/images/digital/digi-img-10.png', alt: 'Digital Artwork 10', flex: 'flex-[1.3]' },
+  { id: 'd6', src: '/images/digital/digi-img-6.png', alt: 'Digital Artwork 6', flex: 'flex-[0.71]' },
+  { id: 'd7', src: '/images/digital/digi-img-7.png', alt: 'Digital Artwork 7', flex: 'flex-[0.71]' },
+  { id: 'd8', src: '/images/digital/digi-img-8.png', alt: 'Digital Artwork 8', flex: 'flex-[0.71]' },
+  { id: 'd9', src: '/images/digital/digi-img-9.png', alt: 'Digital Artwork 9', flex: 'flex-[1.41]' },
+  { id: 'd10', src: '/images/digital/digi-img-10.png', alt: 'Digital Artwork 10', flex: 'flex-[1.07]' },
 ];
 
 const SPRITE_SHEETS = [
@@ -193,7 +193,7 @@ export default function UIDesignsDigitalArtworksPage() {
           <FadeUp delay={0.3}>
             <div className="bg-[#140812]/80 backdrop-blur-md border border-white/10 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 mb-12 md:mb-16 shadow-2xl relative">
               {/* Floating Top Right Character */}
-              <div className="absolute -top-12 sm:-top-16 md:-top-20 right-2 sm:right-6 md:right-10 w-28 sm:w-40 md:w-52 pointer-events-none z-20 drop-shadow-[0_10px_30px_rgba(255,100,50,0.35)]">
+              <div className="absolute -top-10 sm:-top-14 md:-top-20 right-3 sm:right-6 lg:right-8 w-28 sm:w-36 md:w-48 lg:w-56 xl:w-60 pointer-events-none z-20 drop-shadow-[0_10px_35px_rgba(255,100,50,0.4)]">
                 <Image
                   src="/images/digital/digi-img-card-1.png"
                   alt="Floating Character Artwork"
@@ -203,12 +203,12 @@ export default function UIDesignsDigitalArtworksPage() {
                 />
               </div>
 
-              {/* Row 1 Artworks */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-3 sm:mb-4">
+              {/* Row 1 Artworks: Occupies ~78% width to leave space for the floating character */}
+              <div className="w-full lg:w-[77%] xl:w-[78%] flex flex-col sm:flex-row gap-2.5 sm:gap-3.5 mb-3 sm:mb-4">
                 {DIGITAL_ROW_1.map((item) => (
                   <div
                     key={item.id}
-                    className={`${item.flex} rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 hover:-translate-y-1 transition-all duration-300 shadow-lg group`}
+                    className={`${item.flex} rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 hover:-translate-y-1 transition-all duration-300 shadow-lg group relative flex items-center justify-center`}
                   >
                     <Image
                       src={item.src}
@@ -221,12 +221,12 @@ export default function UIDesignsDigitalArtworksPage() {
                 ))}
               </div>
 
-              {/* Row 2 Artworks */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              {/* Row 2 Artworks: Spans full width */}
+              <div className="w-full flex flex-col sm:flex-row gap-2.5 sm:gap-3.5">
                 {DIGITAL_ROW_2.map((item) => (
                   <div
                     key={item.id}
-                    className={`${item.flex} rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 hover:-translate-y-1 transition-all duration-300 shadow-lg group`}
+                    className={`${item.flex} rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 hover:-translate-y-1 transition-all duration-300 shadow-lg group relative flex items-center justify-center`}
                   >
                     <Image
                       src={item.src}
