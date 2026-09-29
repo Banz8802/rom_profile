@@ -241,24 +241,25 @@ export default function UIDesignsDigitalArtworksPage() {
             </div>
           </FadeUp>
 
-          {/* Container 3: Panda Wars & Animation Sprites */}
+          {/* Container 3: Panda Wars & Animation Sprites with Floating Golden Warrior */}
           <FadeUp delay={0.35}>
             <div className="bg-[#140812]/80 backdrop-blur-md border border-white/10 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 mb-6 shadow-2xl relative">
-              {/* Top Row: 3 Columns (Golden Warrior Left + Panda Wars Banner Center + 2 Stacked Screens Right) */}
-              <div className="flex flex-col lg:flex-row items-center gap-3 sm:gap-4 mb-4 pt-2">
-                {/* Left Column: Golden Warrior */}
-                <div className="w-full lg:w-[24%] xl:w-[23%] flex items-center justify-center relative shrink-0">
-                  <div className="relative w-48 sm:w-56 md:w-64 lg:w-full max-w-[280px] aspect-square flex items-center justify-center -mt-8 sm:-mt-12 lg:-mt-16 -ml-0 lg:-ml-6 z-20 pointer-events-none drop-shadow-[0_0_40px_rgba(255,200,50,0.5)]">
-                    <Image
-                      src="/images/digital/panda-067 1.png"
-                      alt="Golden Warrior Sprite"
-                      fill
-                      sizes="(max-width: 1024px) 240px, 280px"
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                </div>
+              {/* Floating Top Left Golden Character overflowing container border */}
+              <div className="absolute -top-12 sm:-top-16 md:-top-24 -left-2 sm:left-2 md:left-4 lg:left-4 w-40 sm:w-52 md:w-64 lg:w-72 xl:w-80 pointer-events-none z-20 drop-shadow-[0_0_45px_rgba(255,200,50,0.55)]">
+                <Image
+                  src="/images/digital/panda-067 1.png"
+                  alt="Golden Warrior Sprite"
+                  width={505}
+                  height={505}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </div>
+
+              {/* Top Row: Left area for warrior + Panda Wars Banner Middle + 2 Stacked Screens Right */}
+              <div className="flex flex-col lg:flex-row items-center gap-3 sm:gap-4 mb-4 pt-1">
+                {/* Left Spacer (reserves space for floating warrior on lg+ screens) */}
+                <div className="hidden lg:block lg:w-[24%] xl:w-[23%] shrink-0" />
 
                 {/* Middle Column: Panda Wars Banner */}
                 <div className="flex-1 w-full rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group relative aspect-[650/238] flex items-center justify-center">
@@ -272,7 +273,7 @@ export default function UIDesignsDigitalArtworksPage() {
                 </div>
 
                 {/* Right Column: 2 Stacked Screens */}
-                <div className="w-full lg:w-[23%] xl:w-[22%] flex flex-col gap-2.5 sm:gap-3 shrink-0">
+                <div className="w-full lg:w-[24%] xl:w-[23%] flex flex-col gap-2.5 sm:gap-3 shrink-0">
                   <div className="rounded-xl overflow-hidden border border-white/10 bg-zinc-950/70 hover:border-[#ff4d29]/40 transition-all duration-300 shadow-lg group relative aspect-[245/114]">
                     <Image
                       src="/images/digital/digi2-img-2.png"
