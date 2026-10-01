@@ -14,11 +14,36 @@ const LOGO_ITEMS = Array.from({ length: 22 }, (_, i) => ({
   alt: `Logo ${i + 1}`,
 }));
 
-const MARKETING_ITEMS = Array.from({ length: 18 }, (_, i) => ({
-  id: i + 1,
-  src: `/images/marketing/marketing-${i + 1}.png`,
-  alt: `Marketing Campaign Design ${i + 1}`,
-}));
+const MARKETING_ROW_1 = [
+  { id: 'm1', src: '/images/marketing/marketing-1.png', alt: 'Famanna More Than a Stay', flex: 'flex-[188]' },
+  { id: 'm2', src: '/images/marketing/marketing-2.png', alt: 'Famanna Relax & Make Memories', flex: 'flex-[188]' },
+  { id: 'm3', src: '/images/marketing/marketing-3.png', alt: 'Matcha Latte Cakes Cakes', flex: 'flex-[205]' },
+  { id: 'm4', src: '/images/marketing/marketing-4.png', alt: 'Funtask Chiks Fried Chicken', flex: 'flex-[219]' },
+  { id: 'm5', src: '/images/marketing/marketing-5.png', alt: 'Mobile KTV Rooms Duo', flex: 'flex-[219]' },
+];
+
+const MARKETING_ROW_2 = [
+  { id: 'm7', src: '/images/marketing/marketing-7.png', alt: 'Famanna Wedding I Do', flex: 'flex-[219]' },
+  { id: 'm8', src: '/images/marketing/marketing-8.png', alt: 'Toastey Cakes Cakes', flex: 'flex-[133]' },
+  { id: 'm9', src: '/images/marketing/marketing-9.png', alt: 'Caramel Macchiato Cakes Cakes', flex: 'flex-[205]' },
+  { id: 'm10', src: '/images/marketing/marketing-10.png', alt: 'Funtask Chiks Chick It Out Coupon Promo', flex: 'flex-[145]' },
+  { id: 'm11', src: '/images/marketing/marketing-11.png', alt: 'Ninos Lechon Bellychon', flex: 'flex-[143]' },
+  { id: 'm12', src: '/images/marketing/marketing-12.png', alt: 'Mobile KTV Rooms Tara Sing Tayo', flex: 'flex-[132]' },
+];
+
+const MARKETING_TALL_BANNER = {
+  id: 'm6',
+  src: '/images/marketing/marketing-6.png',
+  alt: 'Mobile KTV Luxury Rooms Banner',
+};
+
+const MARKETING_ROW_3 = [
+  { id: 'm13', src: '/images/marketing/marketing-13.png', alt: 'Famanna Relax by the Water', flex: 'flex-[188]' },
+  { id: 'm15', src: '/images/marketing/marketing-15.png', alt: 'Tubig ni Ariba Clean Water', flex: 'flex-[219]' },
+  { id: 'm19', src: '/images/marketing/marketing-19.png', alt: 'Auroras Special Chili-Rap Rectangle Banner', flex: 'flex-[490]' },
+  { id: 'm20', src: '/images/marketing/marketing-20.png', alt: 'Chili-Rap Now Available Poster', flex: 'flex-[133]' },
+  { id: 'm21', src: '/images/marketing/marketing-21.png', alt: 'Chili-Rap Coming Soon Poster', flex: 'flex-[133]' },
+];
 
 export default function BrandCampaignDesignPage() {
   const [logoPage, setLogoPage] = useState(1);
@@ -165,22 +190,177 @@ export default function BrandCampaignDesignPage() {
                 </p>
               </div>
 
-              {/* Responsive Masonry Layout for Marketing Campaign Designs */}
-              <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-6 gap-3.5 sm:gap-4 space-y-3.5 sm:space-y-4">
-                {MARKETING_ITEMS.map((item) => (
+              {/* Desktop / Tablet Row-Based Layout */}
+              <div className="hidden md:flex flex-col gap-3 lg:gap-3.5">
+                {/* Top Section: Left (Row 1 + Row 2) + Right (Tall Banner) */}
+                <div className="flex flex-row gap-3 lg:gap-3.5 items-stretch">
+                  {/* Left Block: Row 1 and Row 2 */}
+                  <div className="flex-1 flex flex-col gap-3 lg:gap-3.5">
+                    {/* Row 1: 5 images */}
+                    <div className="flex flex-row gap-3 lg:gap-3.5 items-stretch">
+                      {MARKETING_ROW_1.map((item) => (
+                        <div
+                          key={item.id}
+                          className={`${item.flex} rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg hover:-translate-y-1 relative flex items-center justify-center`}
+                        >
+                          <Image
+                            src={item.src}
+                            alt={item.alt}
+                            width={350}
+                            height={350}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Row 2: 6 images */}
+                    <div className="flex flex-row gap-3 lg:gap-3.5 items-stretch">
+                      {MARKETING_ROW_2.map((item) => (
+                        <div
+                          key={item.id}
+                          className={`${item.flex} rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg hover:-translate-y-1 relative flex items-center justify-center`}
+                        >
+                          <Image
+                            src={item.src}
+                            alt={item.alt}
+                            width={350}
+                            height={350}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right Block: Tall Banner spanning Row 1 & 2 */}
+                  <div className="w-[13.3%] lg:w-[13.4%] shrink-0 flex">
+                    <div className="w-full rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg hover:-translate-y-1 relative flex items-center justify-center">
+                      <Image
+                        src={MARKETING_TALL_BANNER.src}
+                        alt={MARKETING_TALL_BANNER.alt}
+                        width={350}
+                        height={700}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Section: Row 3 featuring the wide rectangular image in the center */}
+                <div className="w-full flex flex-row gap-3 lg:gap-3.5 items-stretch">
+                  {MARKETING_ROW_3.map((item) => (
+                    <div
+                      key={item.id}
+                      className={`${item.flex} rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg hover:-translate-y-1 relative flex items-center justify-center`}
+                    >
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        width={item.id === 'm19' ? 700 : 350}
+                        height={350}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile View: Clean Responsive Grid Layout */}
+              <div className="grid md:hidden grid-cols-2 sm:grid-cols-3 gap-3">
+                {/* Row 1 Items */}
+                {MARKETING_ROW_1.map((item) => (
                   <div
-                    key={`marketing-${item.id}`}
-                    className="break-inside-avoid rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg hover:-translate-y-1 relative"
+                    key={`mob-${item.id}`}
+                    className="rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg relative aspect-square"
                   >
                     <Image
                       src={item.src}
                       alt={item.alt}
-                      width={400}
-                      height={500}
-                      className="w-full h-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                      fill
+                      sizes="(max-width: 640px) 50vw, 33vw"
+                      className="object-cover"
                     />
                   </div>
                 ))}
+
+                {/* Tall Banner on Mobile */}
+                <div className="col-span-2 sm:col-span-1 rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg relative aspect-[3/4] sm:aspect-auto">
+                  <Image
+                    src={MARKETING_TALL_BANNER.src}
+                    alt={MARKETING_TALL_BANNER.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Row 2 Items */}
+                {MARKETING_ROW_2.map((item) => (
+                  <div
+                    key={`mob-${item.id}`}
+                    className="rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg relative aspect-square"
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width: 640px) 50vw, 33vw"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+
+                {/* Bottom Row: Famanna & Tubig ni Ariba */}
+                <div className="rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg relative aspect-square">
+                  <Image
+                    src={MARKETING_ROW_3[0].src}
+                    alt={MARKETING_ROW_3[0].alt}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg relative aspect-square">
+                  <Image
+                    src={MARKETING_ROW_3[1].src}
+                    alt={MARKETING_ROW_3[1].alt}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Wide Rectangular Banner (spans full width on mobile) */}
+                <div className="col-span-2 sm:col-span-3 rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg relative aspect-[490/188]">
+                  <Image
+                    src={MARKETING_ROW_3[2].src}
+                    alt={MARKETING_ROW_3[2].alt}
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Chili-Rap Posters */}
+                <div className="rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg relative aspect-[3/4]">
+                  <Image
+                    src={MARKETING_ROW_3[3].src}
+                    alt={MARKETING_ROW_3[3].alt}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden bg-zinc-950/70 border border-white/10 hover:border-[#ff4d29]/50 transition-all duration-300 group shadow-lg relative aspect-[3/4]">
+                  <Image
+                    src={MARKETING_ROW_3[4].src}
+                    alt={MARKETING_ROW_3[4].alt}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </FadeUp>

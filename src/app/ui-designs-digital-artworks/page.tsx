@@ -26,11 +26,11 @@ const CLAW_GRID_ITEMS = [
 ];
 
 const DIGITAL_ROW_1 = [
-  { id: 'd1', src: '/images/digital/digi-img-1.png', alt: 'Digital Artwork 1', flex: 'flex-[1.41]' },
-  { id: 'd2', src: '/images/digital/digi-img-2.png', alt: 'Digital Artwork 2', flex: 'flex-[0.7]' },
-  { id: 'd3', src: '/images/digital/digi-img-3.png', alt: 'Digital Artwork 3', flex: 'flex-[0.7]' },
-  { id: 'd4', src: '/images/digital/digi-img-4.png', alt: 'Digital Artwork 4', flex: 'flex-[0.71]' },
-  { id: 'd5', src: '/images/digital/digi-img-5.png', alt: 'Digital Artwork 5', flex: 'flex-[0.9]' },
+  { id: 'd1', src: '/images/digital/digi-img-1a.png', alt: 'Digital Artwork 1', flex: 'flex-[1.41]' },
+  { id: 'd2', src: '/images/digital/digi-img-2a.png', alt: 'Digital Artwork 2', flex: 'flex-[0.7]' },
+  { id: 'd3', src: '/images/digital/digi-img-3a.png', alt: 'Digital Artwork 3', flex: 'flex-[0.7]' },
+  { id: 'd4', src: '/images/digital/digi-img-4a.png', alt: 'Digital Artwork 4', flex: 'flex-[0.71]' },
+  { id: 'd5', src: '/images/digital/digi-img-5a.png', alt: 'Digital Artwork 5', flex: 'flex-[0.9]' },
 ];
 
 const DIGITAL_ROW_2 = [
